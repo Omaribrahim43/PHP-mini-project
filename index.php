@@ -12,7 +12,7 @@ if($_SERVER["REQUEST_METHOD"] === "POST" && isset($_POST["submit"])) {
     "productDetailes" => $_POST["productDetailes"],
     "productDate" => $_POST["productDate"],
   ];
-  array_unshift($_SESSION['products'], $products);
+  array_push($_SESSION['products'], $products);
 
   header("Location: ".$_SERVER["PHP_SELF"]."?".uniqid());
   exit();

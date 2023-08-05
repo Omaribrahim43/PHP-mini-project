@@ -36,7 +36,6 @@ $products = isset($_SESSION["products"]) ? $_SESSION["products"] : [];
       </div>
       <hr>
     </div>
-
     <div class="products">
       <div class="container">
         <ul>
@@ -45,10 +44,8 @@ $products = isset($_SESSION["products"]) ? $_SESSION["products"] : [];
                 foreach($products as $product){
                     echo "<li>
                             <div class='product'>
-                                <div>
+                                <div class='product'>
                                     <img src='images/poster.jpg'>
-                                </div>
-                                <div>
                                     <h3>{$product['productName']}</h3>
                                     <p> $ {$product['productPrice']}</p>
                                     <p>{$product['productDate']}</p>

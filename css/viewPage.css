@@ -40,7 +40,7 @@ body {
 .header {
   padding: 20px;
   width: 100%;
-  position: absolute;
+  position: relative;
   z-index: 2;
 }
 .header .container {
@@ -75,8 +75,20 @@ body {
   background: var(--primary-color);
   color: white;
 }
+.products {
+  height: 100vh;
+}
+.products ul{
+  list-style: none;
+  width: 100%;
+  display: flex;
+  gap: 20px;
+  flex-wrap: wrap;
+}
 
-
+.product div img {
+  width: 250px;
+}
 .footer .nav ul {
   display: flex;
   gap: 40px;

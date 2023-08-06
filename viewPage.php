@@ -45,7 +45,7 @@ $products = isset($_SESSION["products"]) ? $_SESSION["products"] : [];
                     echo "<li>
                             <div class='product'>
                                 <div class='product'>
-                                    <img src='images/poster.jpg'>
+                                    <img src='images/{$product['productImage']}'>
                                     <h3>{$product['productName']}</h3>
                                     <p> $ {$product['productPrice']}</p>
                                     <p>{$product['productDate']}</p>

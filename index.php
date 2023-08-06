@@ -7,10 +7,11 @@ if(!isset($_SESSION["products"])){
 
 if($_SERVER["REQUEST_METHOD"] === "POST" && isset($_POST["submit"])) {
   $products = [
+    "productImage" => $_POST["productImage"],
     "productName" => $_POST["productName"],
     "productPrice" => $_POST["productPrice"],
     "productDetailes" => $_POST["productDetailes"],
-    "productDate" => $_POST["productDate"],
+    "productDate" => $_POST["productDate"]
   ];
   array_push($_SESSION['products'], $products);
 
@@ -62,6 +63,10 @@ if($_SERVER["REQUEST_METHOD"] === "POST" && isset($_POST["submit"])) {
         
         <div class="container">
           <h2>ADD PRODUCT</h2>
+          <div>
+          <label for="productName">Product Image</label><br>
+          <input type="file" accept="image/*" id="imageInput" name="productImage" />
+          </div>
           <div class="input-feild">
             <label for="productName">Product Name</label><br>
             <input type="text" name="productName" required><br>
@@ -92,6 +97,7 @@ if($_SERVER["REQUEST_METHOD"] === "POST" && isset($_POST["submit"])) {
         <h2>Products</h2>
         <table>
           <thead>
+            <th>Image</th>
             <th>Name</th>
             <th>Price</th>
             <th>Details</th>
@@ -101,6 +107,7 @@ if($_SERVER["REQUEST_METHOD"] === "POST" && isset($_POST["submit"])) {
             <?php
               foreach($_SESSION["products"] as $product) {
                 echo "<tr>";
+                echo "<td><img style='width:50px; border-radius:50%;' src='images/{$product['productImage']}'></td>";
                 echo "<td>{$product['productName']}</td>";
                 echo "<td> $ {$product['productPrice']}</td>";
                 echo "<td>{$product['productDetailes']}</td>";

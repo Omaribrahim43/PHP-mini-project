@@ -85,7 +85,11 @@ body {
   gap: 20px;
   flex-wrap: wrap;
 }
-
+.product {
+  border: 1px solid black;
+  padding: 10px;
+  box-shadow: 0 0 10px #ddd;
+}
 .product div img {
   width: 250px;
 }
